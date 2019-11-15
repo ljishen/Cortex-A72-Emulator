@@ -2,7 +2,7 @@
 A Qemu-based Emulator for Cortex-A72 64-Bit Platform Running with Ubuntu 16.04.6 LTS (Xenial Xerus).
 
 
-## How to run
+## How to Run
 
 ```
 docker run -ti --rm \
