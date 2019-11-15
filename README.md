@@ -1,10 +1,10 @@
 # Cortex-A72-Emulator
-A Qemu-based Emulator for Cortex-A72 64-Bit Platform Running with Ubuntu 16.04.6 LTS (Xenial Xerus)
+A Qemu-based Emulator for Cortex-A72 64-Bit Platform Running with Ubuntu 16.04.6 LTS (Xenial Xerus).
 
 
 ## How to run
 
-```bash
+```
 docker run -ti --rm \
     --mount type=bind,src=`pwd`/images,dst=/emu \
     [-e NUM_CPUS=#] [-e CPU_CORES=#] [-e CPU_THREADS=#] [-e CPU_SOCKETS=#] \
