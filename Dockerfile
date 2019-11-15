@@ -50,5 +50,5 @@ ENTRYPOINT ["sh", "-c", \
             -drive if=none,file=/my-seed.img,id=my-seed,format=raw \
             -device virtio-blk-device,drive=my-seed \
             -netdev user,id=user0 \
-            -device virtio-net-pci,netdev=user0"]
+            -device virtio-net,netdev=user0"]
 CMD ["$@"]

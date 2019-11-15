@@ -1,5 +1,6 @@
 #cloud-config
-# Examples: https://cloudinit.readthedocs.io/en/latest/topics/examples.html
+# Reference: https://www.zetta.io/en/help/articles-tutorials/cloud-init-reference/
+# Examples:  https://cloudinit.readthedocs.io/en/latest/topics/examples.html
 
 # password of the default user
 password: passw0rd
