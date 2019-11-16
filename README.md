@@ -4,13 +4,13 @@ A Qemu-based Emulator for Cortex-A72 64-Bit Platform Running with Ubuntu 16.04.6
 
 ## How to Run
 
-```
+```bash
 git clone https://github.com/ljishen/Cortex-A72-Emulator.git
 cd Cortex-A72-Emulator
 docker run -ti --rm \
     --mount type=bind,src=`pwd`/images,dst=/emu \
-    [-e NUM_CPUS=#] [-e CPU_CORES=#] [-e CPU_THREADS=#] [-e CPU_SOCKETS=#] \
-    [-e MEMORY=#G] \
+    [-e NUM_CPUS=X] [-e CPU_CORES=X] [-e CPU_THREADS=X] [-e CPU_SOCKETS=X] \
+    [-e MEMORY=X] \
     -p 5555:22 \
     ljishen/cortex-a72-emulator
 ```
