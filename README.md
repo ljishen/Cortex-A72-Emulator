@@ -18,17 +18,18 @@ docker run -ti --rm \
 The default values of the system resource environment variables are:
 
 ```
-# number of CPUs
-NUM_CPUS=6
-# number of CPU cores on one socket
-CPU_CORES=6
+# number of CPUs (<=8)
+NUM_CPUS=8
+# number of CPU cores on one socket (<=8)
+CPU_CORES=8
 # number of threads on one CPU core
 CPU_THREADS=1
 # number of discrete sockets in the system
 CPU_SOCKETS=1
 # initial amount of guest memory
-MEMORY=8G
+MEMORY=12G
 ```
+They should meet the cpu topology requirement: `sockets * cores * threads < smp_cpus`
 
 
 ## Size of the Disk Image

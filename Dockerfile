@@ -26,16 +26,16 @@ WORKDIR /emu
 
 # type of CPU
 ENV CPU cortex-a72
-# number of CPUs
-ENV NUM_CPUS 6
-# number of CPU cores on one socket
-ENV CPU_CORES 6
+# number of CPUs (<=8)
+ENV NUM_CPUS 8
+# number of CPU cores on one socket (<=8)
+ENV CPU_CORES 8
 # number of threads on one CPU core
 ENV CPU_THREADS 1
 # number of discrete sockets in the system
 ENV CPU_SOCKETS 1
 # initial amount of guest memory
-ENV MEMORY 8G
+ENV MEMORY 12G
 
 # hostfwd=tcp::22-:22 is required to map the guestport to the port within the container
 ENTRYPOINT ["sh", "-c", \
