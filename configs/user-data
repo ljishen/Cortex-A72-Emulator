@@ -1,0 +1,26 @@
+#cloud-config
+# Reference: https://www.zetta.io/en/help/articles-tutorials/cloud-init-reference/
+# Examples:  https://cloudinit.readthedocs.io/en/latest/topics/examples.html
+
+# enable password-based SSH logins
+ssh_pwauth: true
+
+# set the system hostname
+hostname: ubuntu
+
+# /etc/hosts will not be rewritten by cloud-init at all.
+manage_etc_hosts: false
+
+# bootcmd will run on every boot
+# runcmd only runs during the first boot
+runcmd:
+  - [ sh, -c, "printf '\n%s %s\n' $(ip route get 1 | awk '{print $NF;exit}') ubuntu >> /etc/hosts" ]
+
+system_info:
+  default_user:
+    plain_text_passwd: 'passw0rd'
+
+    # enable password login
+    lock_passwd: false
+
+    sudo: ALL=(ALL) NOPASSWD:ALL

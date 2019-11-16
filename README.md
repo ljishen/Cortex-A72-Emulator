@@ -9,6 +9,7 @@ docker run -ti --rm \
     --mount type=bind,src=`pwd`/images,dst=/emu \
     [-e NUM_CPUS=#] [-e CPU_CORES=#] [-e CPU_THREADS=#] [-e CPU_SOCKETS=#] \
     [-e MEMORY=#G] \
+    -p 5555:22 \
     ljishen/cortex-a72-emulator
 ```
 
@@ -59,7 +60,11 @@ Let the process continue until you see the finish of the execution of cloud-init
 [  197.110907] cloud-init[1446]: Cloud-init v. 19.2-36-g059d049c-0ubuntu2~16.04.1 finished at Fri, 15 Nov 2019 05:14:37 +0000. Datasource DataSourceNoCloud [seed=/dev/vda][dsmode=net].  Up 196.72 seconds
 ```
 
-And now you can login as user `ubuntu` with whatever the password (default: `passw0rd`).
+And now you can login as user `ubuntu` with whatever the password (default: `passw0rd`), or via ssh from the host
+
+```bash
+ssh ubuntu@localhost -p 5555
+```
 
 You can then verify the system information:
 
